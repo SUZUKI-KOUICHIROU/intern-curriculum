@@ -1,6 +1,6 @@
 <% if user_signed_in? %> 
   <h2><%= current_user.name %></h2> 
   <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "編集", edit_user_registration_path, autofocus: true, autocomplete: "email" %><br />
+  <%= link_to "アカウント編集", edit_user_registration_path, autofocus: true, autocomplete: "email" %><br />
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
 <% end %>
