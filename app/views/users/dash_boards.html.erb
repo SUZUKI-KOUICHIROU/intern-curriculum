@@ -1,6 +1,14 @@
-<% if user_signed_in? %> 
-  <h2><%= current_user.name %></h2> 
-  <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "アカウント編集", edit_user_registration_path, autofocus: true, autocomplete: "email" %><br />
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
-<% end %>
+<div class="container">
+  <div class="col-md-6 offset-md-3">
+
+    <% if user_signed_in? %> 
+      <h1 class="text-center">Dash Boards</h1>
+      <h4 class="text-center font-weight-bold mt-4"><%= current_user.name %></h4> 
+  
+      <div class="actions text-center"> 
+        <%= link_to t('activerecord.attributes.user.edit_title'), edit_user_registration_path, class: "btn btn-primary btn_size" %><br />
+        <%= link_to t('activerecord.attributes.user.sign_out'), destroy_user_session_path, class: "btn btn-warning btn_size", method: :delete %> 
+      </div>
+    <% end %>
+  </div>
+</div>
