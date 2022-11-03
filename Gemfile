@@ -33,6 +33,9 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-i18n'
+
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
