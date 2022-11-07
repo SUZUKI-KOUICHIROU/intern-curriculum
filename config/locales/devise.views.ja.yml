@@ -27,9 +27,25 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         edit_title: 編集
+        delete_title: 削除
+        article_index: 記事一覧
+        article_index_btn: 記事新規作成
         sign_out: ログアウト
+      article:  
+        detail_view: 詳細表示
+        title: タイトル
+        content: 内容
+        image: 画像
+        article_edit_delete: 編集・削除
+        article_new: 記事の新規作成
+        article_edit: 記事の編集
+        create_btn: 新規作成
+        update_btn: 更新する
+        article_detail: 詳細
+        article_back: 記事一覧へ戻る
     models:
       user: ユーザー
+      article: 記事
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

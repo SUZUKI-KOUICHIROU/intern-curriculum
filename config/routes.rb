@@ -18,9 +18,14 @@ Rails.application.routes.draw do
     post 'users', to: 'devise/passwords#create'
     get 'users', to: 'devise/passwords#edit'
     put 'users', to: 'devise/passwords#update'
+  
+    namespace :user, path: "users", module: "users" do
+      resources :articles
+    end
   end
+    
 
-  get 'dash_boards', to: 'users#dash_boards'
+  get 'dash_boards', to: 'users#dash_boards' 
   
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
