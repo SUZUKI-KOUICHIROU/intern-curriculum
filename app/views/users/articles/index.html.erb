@@ -1,0 +1,38 @@
+<div class="container text-center">
+  <div class="col-md-6 offset-md-3">
+    <div class="article-index font-weight-bold">
+      <%= t('activerecord.attributes.user.article_index') %>
+    </div>
+      <%= link_to t('activerecord.attributes.user.article_index_btn'), new_user_article_path, class: "btn btn-primary article-index-btn" %> 
+  </div>
+
+  <table class="table table-sm" id="table-articles">
+    <thead>
+      <tr>    
+        <th><%= Article.human_attribute_name :detail_view %></th>
+        <th><%= Article.human_attribute_name :title %></th>
+        <th><%= Article.human_attribute_name :content %></th>
+        <th><%= Article.human_attribute_name :image %></th>
+        <th><%= Article.human_attribute_name :article_edit_delete %></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr> 
+          <td><%= link_to t('activerecord.attributes.article.article_detail'), user_article_path(article), class: "btn btn-primary" %></td>
+          
+          <td><%= article.title %></td>    
+          <td><%= article.content %></td>
+        
+          <td><%= image_tag article.image.url, :size => "200x200" if article.image.present? %></td>
+          <td><%= link_to t('activerecord.attributes.user.edit_title'), edit_user_article_path(article), class: "btn btn-success" %>
+              <%= link_to t('activerecord.attributes.user.delete_title'), user_article_path(article), method: :delete,
+                      data: { confirm: "削除してよろしいですか？" },
+                      class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

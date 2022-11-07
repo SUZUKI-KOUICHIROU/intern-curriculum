@@ -1,0 +1,32 @@
+<%= form_with(model: @article, url: user_articles_path, local: true, method: :post) do |f| %>
+  <!--%= render "devise/shared/error_messages", resource: resource %-->
+        
+  <div class="article-label1">  
+    <%= f.label t('activerecord.attributes.article.title')%>
+  </div>
+  <div class="article-field">
+    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control" %>
+  </div>
+        
+  <div class="article-label2">
+    <%= f.label t('activerecord.attributes.article.content') %>
+  </div>
+  <div class="article-field">
+    <%= f.text_area :content, autocomplete: "content", class: "form-control" %>
+  </div>
+    
+  <div class="article-label3">
+    <%= f.label t('activerecord.attributes.article.image') %>
+  </div>
+  <div class="article-image">
+    <%= f.file_field :image, class: 'form-control board_board_image' %>
+  </div>
+
+  <div class="actions text-center my-4">
+    <%= f.submit yield(:button_text), class: "btn btn-primary btn-lg" %>
+  </div>
+        
+  <div class="article-back">
+    <%= link_to t("devise.shared.links.back"), :back %>
+  </div>
+<% end %>
